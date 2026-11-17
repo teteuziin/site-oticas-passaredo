@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Óticas Passaredo — Muito mais que uma ótica, uma visão de mundo</title>
+<meta name="description" content="Uma ótica diferente de tudo que você já viu! Com preços fixos e lentes com melhor custo benefício.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bege:#FAF5EE;
+  --bege-2:#F3E9DC;
+  --bordo:#6E1423;
+  --bordo-escuro:#4E0D18;
+  --tinta:#3A2320;
+  --rosa-forte:#9E3548;
+  --rosa-claro:#EFC9CE;
+  --dourado:#7A5E26;
+  --linha:#E4D5C3;
+  --branco:#FFFFFF;
+  --sombra:0 16px 40px rgba(78,13,24,.14);
+  --raio:20px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Jost',sans-serif;
+  background:var(--bege);
+  color:var(--tinta);
+  line-height:1.6;
+  font-size:1.0625rem;
+  -webkit-font-smoothing:antialiased;
+}
+img,video{display:block;max-width:100%}
+a{color:inherit}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+section[id]{scroll-margin-top:84px}
+h1,h2,h3,.serif{font-family:'Fraunces',serif;font-weight:600;line-height:1.12;color:var(--bordo-escuro)}
+h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:16px}
+h3{font-size:1.375rem}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:.8125rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--rosa-forte);margin-bottom:16px;
+}
+.eyebrow::before{content:"";width:32px;height:1px;background:var(--dourado)}
+.lead{font-size:1.1875rem;max-width:56ch}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:16px 32px;border-radius:999px;border:1px solid transparent;
+  font-family:'Jost',sans-serif;font-size:1rem;font-weight:600;
+  text-decoration:none;cursor:pointer;transition:transform .25s ease,background .25s ease,color .25s ease;
+  min-height:52px;
+}
+.btn:hover{transform:translateY(-2px)}
+.btn-bordo{background:var(--bordo);color:var(--branco)}
+.btn-bordo:hover{background:var(--bordo-escuro)}
+.btn-contorno{background:transparent;color:var(--bordo);border-color:var(--bordo)}
+.btn-contorno:hover{background:var(--bordo);color:var(--branco)}
+.btn-claro{background:var(--branco);color:var(--bordo)}
+.btn-claro:hover{background:var(--rosa-claro);color:var(--bordo-escuro)}
+
+/* ---------- moldura-bandeja (conceito) ---------- */
+.bandeja{
+  position:relative;background:var(--branco);
+  border:1px solid var(--linha);border-radius:var(--raio);
+  box-shadow:var(--sombra);
+}
+.bandeja::before{
+  content:"";position:absolute;inset:10px;
+  border:1px solid var(--linha);border-radius:14px;pointer-events:none;
+}
+.bandeja .coracao{
+  position:absolute;top:-15px;left:50%;transform:translateX(-50%);
+  width:30px;height:30px;border-radius:50%;
+  background:var(--bordo);color:var(--branco);
+  display:flex;align-items:center;justify-content:center;font-size:.85rem;z-index:2;
+}
+
+/* ---------- header ---------- */
+header{
+  position:fixed;inset:0 0 auto 0;z-index:60;
+  background:rgba(250,245,238,.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid transparent;transition:border-color .3s ease, box-shadow .3s ease;
+}
+header.sombra{border-bottom-color:var(--linha);box-shadow:0 8px 24px rgba(78,13,24,.08)}
+.header-in{display:flex;align-items:center;justify-content:space-between;gap:24px;height:76px}
+.marca{line-height:1;text-decoration:none}
+.marca small{display:block;font-size:.625rem;font-weight:600;letter-spacing:.42em;color:var(--dourado);text-transform:uppercase;margin-bottom:4px}
+.marca strong{font-family:'Fraunces',serif;font-size:1.55rem;font-weight:600;color:var(--bordo);letter-spacing:.04em}
+.marca strong i{font-style:normal;color:var(--rosa-forte)}
+nav.menu{display:flex;gap:32px}
+nav.menu a{
+  text-decoration:none;font-weight:500;font-size:.95rem;color:var(--tinta);
+  padding:8px 0;border-bottom:2px solid transparent;transition:border-color .25s ease,color .25s ease;
+}
+nav.menu a:hover{color:var(--bordo);border-bottom-color:var(--dourado)}
+.header-cta{padding:12px 24px;min-height:46px;font-size:.95rem}
+.menu-btn{display:none;background:none;border:0;cursor:pointer;padding:10px;min-width:44px;min-height:44px}
+.menu-btn span{display:block;width:24px;height:2px;background:var(--bordo);margin:5px auto;transition:.3s}
+
+/* ---------- hero ---------- */
+.hero{padding:156px 0 96px;background:linear-gradient(180deg,var(--bege) 0%,var(--bege-2) 100%)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+.hero h1{font-size:clamp(2.55rem,5.4vw,4.3rem);margin-bottom:24px}
+.hero h1 em{font-style:italic;color:var(--rosa-forte)}
+.hero .slogan{font-family:'Fraunces',serif;font-style:italic;font-size:1.3rem;color:var(--bordo);margin-bottom:16px}
+.hero p.desc{max-width:48ch;margin-bottom:32px}
+.hero-ctas{display:flex;gap:16px;flex-wrap:wrap}
+.hero-midia{position:relative}
+.hero-moldura{
+  border-radius:170px 170px var(--raio) var(--raio);
+  overflow:hidden;border:1px solid var(--dourado);
+  outline:1px solid var(--dourado);outline-offset:6px;
+  box-shadow:var(--sombra);background:var(--bordo-escuro);
+}
+.hero-moldura video{width:100%;height:560px;object-fit:cover}
+.hero-selo{
+  position:absolute;bottom:24px;left:-14px;
+  background:var(--branco);border:1px solid var(--linha);border-radius:14px;
+  box-shadow:var(--sombra);padding:12px 18px;font-weight:600;color:var(--bordo);
+  display:flex;align-items:center;gap:10px;font-size:.95rem;
+}
+.hero-selo .cor{color:var(--rosa-forte)}
+.faixa-off{
+  margin-top:72px;background:var(--bordo);color:var(--branco);
+  border-radius:var(--raio);padding:20px 32px;
+  display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+}
+.faixa-off strong{font-family:'Fraunces',serif;font-size:1.45rem;font-weight:600;letter-spacing:.01em}
+.faixa-off span{color:var(--rosa-claro)}
+.faixa-off a{color:var(--branco);font-weight:600;text-decoration:none;border-bottom:2px solid var(--dourado);padding-bottom:2px;white-space:nowrap}
+
+/* ---------- novembro off ---------- */
+.off{background:var(--bordo);color:var(--branco)}
+.off h2{color:var(--branco)}
+.off .eyebrow{color:var(--rosa-claro)}
+.off-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.off-numeros{display:grid;gap:24px;margin-top:32px}
+.off-num{display:flex;align-items:baseline;gap:16px;border-bottom:1px solid rgba(255,255,255,.18);padding-bottom:24px}
+.off-num:last-child{border-bottom:0;padding-bottom:0}
+.off-num .valor{font-family:'Fraunces',serif;font-size:clamp(3rem,7vw,4.8rem);font-weight:600;line-height:1;color:var(--branco)}
+.off-num .valor small{font-size:.45em;color:var(--rosa-claro)}
+.off-num p{color:var(--rosa-claro);max-width:26ch}
+.off-num p strong{color:var(--branco);display:block;font-size:1.1rem}
+.player{border-radius:var(--raio);overflow:hidden;border:1px solid rgba(255,255,255,.35);outline:1px solid rgba(255,255,255,.18);outline-offset:6px;background:#000}
+.player video{width:100%;height:520px;object-fit:cover}
+.player figcaption{padding:14px 18px;background:var(--bordo-escuro);color:var(--rosa-claro);font-size:.95rem}
+
+/* ---------- coleções ---------- */
+.filtros{display:flex;gap:12px;flex-wrap:wrap;margin:32px 0}
+.filtro{
+  padding:12px 24px;border-radius:999px;border:1px solid var(--bordo);
+  background:transparent;color:var(--bordo);font-family:'Jost',sans-serif;
+  font-size:.95rem;font-weight:600;cursor:pointer;min-height:46px;transition:.25s;
+}
+.filtro:hover{background:var(--rosa-claro)}
+.filtro[aria-pressed="true"]{background:var(--bordo);color:var(--branco)}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.card{
+  background:var(--branco);border:1px solid var(--linha);border-radius:var(--raio);
+  overflow:hidden;display:flex;flex-direction:column;transition:transform .3s ease,box-shadow .3s ease;
+}
+.card:hover{transform:translateY(-4px);box-shadow:var(--sombra)}
+.card[hidden]{display:none}
+.card button.foto{border:0;padding:0;cursor:pointer;background:none}
+.card .foto img{width:100%;height:250px;object-fit:cover}
+.card .corpo{padding:24px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card .preco{font-family:'Fraunces',serif;font-size:2rem;font-weight:600;color:var(--bordo);line-height:1}
+.card .preco small{font-size:.95rem;color:var(--tinta);font-family:'Jost',sans-serif;font-weight:500}
+.card p{font-size:.98rem}
+.card .grifes{font-weight:600;color:var(--bordo-escuro);font-size:1.05rem;line-height:1.5}
+.simulador{margin-top:56px;padding:40px}
+.simulador h3{margin-bottom:8px}
+.sim-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:end;margin-top:24px}
+.sim-grid label{font-weight:600;display:block;margin-bottom:8px}
+.sim-grid select{
+  width:100%;padding:14px 16px;border:1px solid var(--bordo);border-radius:12px;
+  font-family:'Jost',sans-serif;font-size:1rem;background:var(--branco);color:var(--tinta);min-height:52px;
+}
+.sim-check{display:flex;gap:12px;align-items:flex-start;margin-top:20px;cursor:pointer}
+.sim-check input{width:22px;height:22px;accent-color:var(--bordo);margin-top:3px;flex:none}
+.sim-resultado{text-align:left}
+.sim-resultado .rotulo{font-size:.85rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--rosa-forte)}
+.sim-resultado .grande{font-family:'Fraunces',serif;font-size:clamp(2.6rem,6vw,4rem);font-weight:600;color:var(--bordo);line-height:1.05}
+.sim-resultado p{font-size:.95rem}
+
+/* ---------- essência / galeria ---------- */
+.essencia{background:var(--bege-2)}
+.galeria{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px}
+.galeria button{border:0;padding:0;background:none;cursor:pointer;border-radius:16px;overflow:hidden;position:relative}
+.galeria img{width:100%;height:300px;object-fit:cover;transition:transform .5s ease}
+.galeria button:hover img,.galeria button:focus-visible img{transform:scale(1.05)}
+
+/* ---------- vídeos ---------- */
+.trilho{
+  display:flex;gap:24px;overflow-x:auto;padding:8px 4px 24px;margin-top:40px;
+  scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:var(--rosa-forte) var(--bege-2);
+}
+.vcard{
+  flex:0 0 300px;scroll-snap-align:start;background:var(--branco);
+  border:1px solid var(--linha);border-radius:var(--raio);overflow:hidden;
+}
+.vcard video{width:100%;height:400px;object-fit:cover;background:#000}
+.vcard .vcorpo{padding:18px 20px}
+.vcard h3{font-size:1.1rem;margin-bottom:4px}
+.vcard p{font-size:.92rem}
+.trilho-dica{font-size:.9rem;color:var(--rosa-forte);font-weight:600;margin-top:4px}
+
+/* ---------- serviços ---------- */
+.abas{display:flex;gap:12px;flex-wrap:wrap;margin:32px 0 24px}
+.aba{
+  padding:12px 22px;border-radius:999px;border:1px solid var(--bordo);
+  background:transparent;color:var(--bordo);font-family:'Jost',sans-serif;
+  font-weight:600;font-size:.95rem;cursor:pointer;min-height:46px;transition:.25s;
+}
+.aba:hover{background:var(--rosa-claro)}
+.aba[aria-selected="true"]{background:var(--bordo);color:var(--branco)}
+.painel-servico{padding:40px;display:none}
+.painel-servico.ativo{display:block}
+.painel-servico blockquote{
+  font-family:'Fraunces',serif;font-style:italic;font-size:1.35rem;color:var(--bordo);
+  border-left:3px solid var(--dourado);padding-left:20px;margin:20px 0;max-width:52ch;
+}
+.painel-servico p{max-width:60ch}
+.painel-servico .btn{margin-top:16px}
+.destaque-num{font-family:'Fraunces',serif;font-size:2.4rem;color:var(--rosa-forte);font-weight:600;line-height:1}
+
+/* ---------- lojas ---------- */
+.lojas{background:var(--bege-2)}
+.loja-btns{display:flex;gap:12px;flex-wrap:wrap;margin:32px 0 24px}
+.painel-loja{padding:40px;display:none}
+.painel-loja.ativo{display:block}
+.loja-grid{display:block;max-width:640px}
+.loja-grid h3{font-size:1.6rem;margin-bottom:12px}
+.loja-grid address{font-style:normal;margin-bottom:16px}
+.loja-grid .linha-info{display:flex;gap:10px;margin-bottom:10px;align-items:baseline}
+.loja-grid .linha-info strong{color:var(--bordo);min-width:86px}
+.nota-google{display:inline-flex;gap:8px;align-items:center;background:var(--bege);border:1px solid var(--linha);border-radius:999px;padding:8px 16px;font-weight:600;color:var(--bordo);margin-bottom:16px}
+.loja-acoes{display:flex;gap:16px;flex-wrap:wrap;margin-top:24px}
+.loja-foto{border-radius:16px;overflow:hidden}
+.loja-foto img{width:100%;height:100%;min-height:280px;object-fit:cover}
+
+/* ---------- rodapé ---------- */
+footer{background:var(--bordo-escuro);color:var(--rosa-claro);padding:72px 0 40px}
+.footer-grid{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;align-items:flex-start}
+footer .logo-rodape{width:250px;max-width:70vw;border-radius:8px}
+footer nav{display:flex;flex-direction:column;gap:10px}
+footer nav a{color:var(--rosa-claro);text-decoration:none;font-weight:500}
+footer nav a:hover{color:var(--branco)}
+footer .ig{font-family:'Fraunces',serif;font-size:1.3rem;color:var(--branco);text-decoration:none}
+.footer-fim{border-top:1px solid rgba(255,255,255,.16);margin-top:48px;padding-top:24px;font-size:.9rem;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* ---------- lightbox ---------- */
+.lightbox{
+  position:fixed;inset:0;z-index:90;background:rgba(46,8,14,.94);
+  display:none;align-items:center;justify-content:center;padding:24px;
+}
+.lightbox.aberto{display:flex}
+.lightbox figure{max-width:min(880px,100%);text-align:center}
+.lightbox img{max-height:76vh;width:auto;max-width:100%;margin:0 auto;border-radius:12px}
+.lightbox figcaption{color:var(--branco);margin-top:16px;font-size:1.05rem}
+.lb-btn{
+  position:absolute;background:rgba(255,255,255,.12);color:var(--branco);border:1px solid rgba(255,255,255,.4);
+  width:48px;height:48px;border-radius:50%;cursor:pointer;font-size:1.2rem;
+  display:flex;align-items:center;justify-content:center;
+}
+.lb-btn:hover{background:var(--bordo)}
+.lb-fechar{top:20px;right:20px}
+.lb-ant{left:16px;top:50%;transform:translateY(-50%)}
+.lb-prox{right:16px;top:50%;transform:translateY(-50%)}
+
+/* ---------- intro ---------- */
+#intro{
+  position:fixed;inset:0;z-index:120;background:var(--bordo);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;
+  opacity:1;transition:opacity .45s ease;
+}
+#intro.saindo{opacity:0;pointer-events:none}
+#intro img{width:min(320px,72vw);border-radius:8px;animation:introSobe .8s ease both}
+#intro button{
+  background:transparent;border:1px solid var(--rosa-claro);color:var(--branco);
+  padding:10px 26px;border-radius:999px;font-family:'Jost',sans-serif;font-weight:600;cursor:pointer;min-height:44px;
+}
+@keyframes introSobe{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+
+/* ---------- revelação suave ---------- */
+.revela{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.revela.visivel{opacity:1;transform:none}
+
+/* ---------- responsivo ---------- */
+@media (max-width:1023px){
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .galeria{grid-template-columns:repeat(2,1fr)}
+  .hero-moldura video{height:480px}
+}
+@media (max-width:820px){
+  section{padding:64px 0}
+  .hero{padding:124px 0 64px}
+  .hero-grid,.off-grid,.sim-grid,.loja-grid{grid-template-columns:1fr}
+  .hero-moldura video{height:440px}
+  .hero-selo{left:8px}
+  .player video{height:440px}
+  nav.menu{
+    position:absolute;top:76px;left:0;right:0;background:var(--bege);
+    flex-direction:column;gap:0;padding:8px 24px 16px;
+    border-bottom:1px solid var(--linha);display:none;
+  }
+  nav.menu.aberto{display:flex}
+  nav.menu a{padding:12px 0;border-bottom:1px solid var(--linha)}
+  .menu-btn{display:block}
+  .header-cta{display:none}
+  .simulador,.painel-servico,.painel-loja{padding:28px 22px}
+  .faixa-off{padding:20px 24px}
+}
+@media (max-width:480px){
+  .cards{grid-template-columns:1fr}
+  .galeria{grid-template-columns:1fr 1fr;gap:12px}
+  .galeria img{height:210px}
+  .vcard{flex-basis:82vw}
+  .hero-ctas .btn{width:100%;justify-content:center}
+}
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  .revela{opacity:1;transform:none;transition:none}
+  *{animation-duration:.01ms !important;transition-duration:.01ms !important}
+}
+</style>
+</head>
+<body>
+
+<header id="topo">
+  <div class="wrap header-in">
+    <a class="marca" href="#inicio" aria-label="Óticas Passaredo — início">
+      <small>Óticas</small>
+      <strong>Passaredo<i>.</i></strong>
+    </a>
+    <nav class="menu" id="menu" aria-label="Navegação principal">
+      <a href="#novembro-off">Novembro OFF</a>
+      <a href="#colecoes">Coleções</a>
+      <a href="#essencia">A Loja</a>
+      <a href="#videos">Vídeos</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#lojas">Lojas</a>
+    </nav>
+    <a class="btn btn-bordo header-cta" href="#lojas">Agendar horário</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+<!-- ================= HERO ================= -->
+<section class="hero" id="inicio">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="revela">
+        <p class="slogan">“Muito mais que uma ótica, uma visão de mundo.”</p>
+        <h1>De longe, completa o seu estilo. <em>De perto</em>, é o detalhe que realça a sua personalidade.</h1>
+        <p class="desc">Armações para todos os gostos, com preços fixos.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-bordo" href="#colecoes">Ver as coleções</a>
+          <a class="btn btn-contorno" href="#servicos">Passa in Casa: a loja vai até você</a>
+        </div>
+      </div>
+      <div class="hero-midia revela">
+        <div class="hero-moldura">
+          <video id="heroVideo" autoplay muted loop playsinline preload="metadata"
+                 poster="media/posters/03-armacoes-vista-mar.jpg"
+                 src="media/videos/03-armacoes-vista-mar.mp4"
+                 aria-label="Armações na loja Essência, com vista para o mar"></video>
+        </div>
+        <p class="hero-selo"><span class="cor">♥</span> Loja Essência · Pituba</p>
+      </div>
+    </div>
+    <div class="faixa-off">
+      <div>
+        <strong>Novembro OFF</strong><br>
+        <span>O momento ideal para renovar seu olhar, com condições especiais.</span>
+      </div>
+      <a href="#novembro-off">Ver as condições do mês</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NOVEMBRO OFF ================= -->
+<section class="off" id="novembro-off">
+  <div class="wrap">
+    <div class="off-grid">
+      <div class="revela">
+        <span class="eyebrow">Campanha de novembro</span>
+        <h2>Novembro OFF</h2>
+        <p class="lead">Condições do mês para o seu óculos completo:</p>
+        <div class="off-numeros">
+          <div class="off-num">
+            <span class="valor"><small>R$</small> 123</span>
+            <p><strong>Linha Sublime</strong> armação por este valor no óculos completo</p>
+          </div>
+          <div class="off-num">
+            <span class="valor"><small>R$</small> 123</span>
+            <p><strong>Solares</strong> por este valor no óculos completo</p>
+          </div>
+          <div class="off-num">
+            <span class="valor">30<small>% OFF</small></span>
+            <p><strong>Demais linhas</strong> de desconto no óculos completo</p>
+          </div>
+        </div>
+      </div>
+      <figure class="player revela">
+        <video class="video-som" controls preload="none"
+               poster="media/posters/01-novembro-off.jpg"
+               src="media/videos/01-novembro-off.mp4"
+               aria-label="Vídeo da campanha Novembro OFF"></video>
+        <figcaption>A campanha, contada pela nossa equipe.</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COLEÇÕES ================= -->
+<section id="colecoes">
+  <div class="wrap">
+    <div class="revela">
+      <span class="eyebrow">Coleções</span>
+      <h2>Preço fixo, sem surpresa</h2>
+      <p class="lead">Não importa seu estilo, a Passaredo tem todos. Cada linha tem o seu valor — e ele não muda de loja para loja.</p>
+    </div>
+    <div class="filtros" role="group" aria-label="Filtrar coleções">
+      <button class="filtro" data-filtro="todas" aria-pressed="true">Todas</button>
+      <button class="filtro" data-filtro="fixo" aria-pressed="false">Preço fixo</button>
+      <button class="filtro" data-filtro="grifes" aria-pressed="false">Grifes e lentes</button>
+    </div>
+    <div class="cards">
+      <article class="card" data-cat="fixo">
+        <button class="foto" data-lightbox="media/posters/09-sublime-bandeja-rosa.jpg" data-legenda="Linha Sublime — armações a R$ 249,90" aria-label="Ampliar foto da Linha Sublime">
+          <img src="media/posters/09-sublime-bandeja-rosa.jpg" alt="Bandeja rosa com armações da Linha Sublime" loading="lazy">
+        </button>
+        <div class="corpo">
+          <h3>Linha Sublime</h3>
+          <p class="preco">R$ 249<small>,90</small></p>
+          <p>Nova coleção na bandeja — e ela está irresistível.</p>
+        </div>
+      </article>
+      <article class="card" data-cat="fixo">
+        <button class="foto" data-lightbox="media/produtos/07-colecao-outono-clip-on-3.jpg" data-legenda="Clip-on 2-em-1 — grau e sol no mesmo óculos, R$ 299,90" aria-label="Ampliar foto do clip-on 2-em-1">
+          <img src="media/produtos/07-colecao-outono-clip-on-3.jpg" alt="Bandeja com armações clip-on 2-em-1 da Coleção Outono" loading="lazy">
+        </button>
+        <div class="corpo">
+          <h3>Clip-on 2-em-1</h3>
+          <p class="preco">R$ 299<small>,90</small></p>
+          <p>Grau e sol no mesmo óculos: a frente solar encaixa e o seu dia continua.</p>
+        </div>
+      </article>
+      <article class="card" data-cat="fixo">
+        <button class="foto" data-lightbox="media/produtos/07-colecao-outono-clip-on-1.jpg" data-legenda="Solares Linha Clássica — R$ 199,90" aria-label="Ampliar foto dos solares da Linha Clássica">
+          <img src="media/produtos/07-colecao-outono-clip-on-1.jpg" alt="Óculos de sol sobre bandeja branca com flores, na loja" loading="lazy">
+        </button>
+        <div class="corpo">
+          <h3>Solares · Linha Clássica</h3>
+          <p class="preco">R$ 199<small>,90</small></p>
+          <p>Para o sol de Salvador, o ano inteiro.</p>
+        </div>
+      </article>
+      <article class="card" data-cat="grifes">
+        <button class="foto" data-lightbox="media/produtos/07-colecao-outono-clip-on-2.jpg" data-legenda="Grifes e lentes — Vogue, Armani, Ray-Ban, Michael Kors, DSQUARED2; lentes Hoya, Zeiss e Essilor" aria-label="Ampliar foto de detalhe de armação de grife">
+          <img src="media/produtos/07-colecao-outono-clip-on-2.jpg" alt="Detalhe da haste de uma armação com a marca Passaredo gravada" loading="lazy">
+        </button>
+        <div class="corpo">
+          <h3>Grifes e lentes</h3>
+          <p class="grifes">Vogue · Armani · Ray-Ban · Michael Kors · DSQUARED2</p>
+          <p>Lentes Hoya, Zeiss e Essilor — e o selo Varilux Especialista em todas as lojas.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="bandeja simulador revela">
+      <span class="coracao" aria-hidden="true">♥</span>
+      <h3>Quanto sai o seu óculos completo no Novembro OFF?</h3>
+      <p>Escolha a linha e veja a condição do mês, na hora.</p>
+      <div class="sim-grid">
+        <div>
+          <label for="simLinha">Linha da armação</label>
+          <select id="simLinha">
+            <option value="sublime">Linha Sublime</option>
+            <option value="solares">Solares · Linha Clássica</option>
+            <option value="clipon">Clip-on 2-em-1 (demais linhas)</option>
+          </select>
+          <label class="sim-check" for="simCompleto">
+            <input type="checkbox" id="simCompleto" checked>
+            <span>Óculos completo (armação + lentes) — é nessa compra que vale a condição do Novembro OFF</span>
+          </label>
+        </div>
+        <div class="sim-resultado" aria-live="polite">
+          <span class="rotulo">No Novembro OFF</span>
+          <p class="grande" id="simValor">R$ 123</p>
+          <p id="simNota">Armação da Linha Sublime no óculos completo.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ESSÊNCIA / A LOJA ================= -->
+<section class="essencia" id="essencia">
+  <div class="wrap">
+    <div class="revela">
+      <span class="eyebrow">A loja</span>
+      <h2>Essência: a Passaredo de frente para o mar</h2>
+      <p class="lead">Nossa loja conceito na Pituba tem pé-direito duplo e lustre de cristal. Toque nas fotos para passear por ela.</p>
+    </div>
+    <div class="galeria">
+      <button data-lightbox="media/lojas/05-tour-essencia-pituba-1.jpg" data-legenda="A entrada da Essência, na Pituba" aria-label="Ampliar foto da entrada da loja"><img src="media/lojas/05-tour-essencia-pituba-1.jpg" alt="Entrada de vidro da loja Essência, com balcão e mezanino" loading="lazy"></button>
+      <button data-lightbox="media/lojas/05-tour-essencia-pituba-2.jpg" data-legenda="Espelho oval e provadores da Essência" aria-label="Ampliar foto do espelho oval"><img src="media/lojas/05-tour-essencia-pituba-2.jpg" alt="Espelho oval com manequins usando óculos de sol" loading="lazy"></button>
+      <button data-lightbox="media/lojas/05-tour-essencia-pituba-3.jpg" data-legenda="Parede de armações iluminada" aria-label="Ampliar foto da parede de armações"><img src="media/lojas/05-tour-essencia-pituba-3.jpg" alt="Parede de nichos iluminados com armações" loading="lazy"></button>
+      <button data-lightbox="media/lojas/05-tour-essencia-pituba-4.jpg" data-legenda="Solares em exposição na Essência" aria-label="Ampliar foto dos solares em exposição"><img src="media/lojas/05-tour-essencia-pituba-4.jpg" alt="Nichos iluminados com óculos de sol" loading="lazy"></button>
+      <button data-lightbox="media/lojas/05-tour-essencia-pituba-5.jpg" data-legenda="Cantinho Singular da loja" aria-label="Ampliar foto do cantinho Singular"><img src="media/lojas/05-tour-essencia-pituba-5.jpg" alt="Parede de armações com placa Singular" loading="lazy"></button>
+      <button data-lightbox="media/lojas/05-tour-essencia-pituba-6.jpg" data-legenda="A orla vista de dentro da Essência" aria-label="Ampliar foto da vista para o mar"><img src="media/lojas/05-tour-essencia-pituba-6.jpg" alt="Vista do mar pela vitrine da loja, com lustre de cristal" loading="lazy"></button>
+      <button data-lightbox="media/lojas/05-tour-essencia-pituba-7.jpg" data-legenda="O salão da Essência, da vitrine ao balcão" aria-label="Ampliar foto do salão da loja"><img src="media/lojas/05-tour-essencia-pituba-7.jpg" alt="Salão da loja visto da entrada, com balcão branco" loading="lazy"></button>
+      <button data-lightbox="media/lojas/05-tour-essencia-pituba-8.jpg" data-legenda="A fachada da Essência" aria-label="Ampliar foto da fachada"><img src="media/lojas/05-tour-essencia-pituba-8.jpg" alt="Fachada de vidro com o nome Óticas Passaredo Essência" loading="lazy"></button>
+    </div>
+  </div>
+</section>
+
+<!-- ================= VÍDEOS ================= -->
+<section id="videos">
+  <div class="wrap">
+    <div class="revela">
+      <span class="eyebrow">Vídeos</span>
+      <h2>Três estilos, uma certeza</h2>
+      <p class="lead">Você vai se apaixonar por pelo menos um. Vem provar o seu.</p>
+      <p class="trilho-dica">Arraste para o lado e aperte o play — todos têm som.</p>
+    </div>
+    <div class="trilho" id="trilho">
+      <article class="vcard">
+        <video class="video-som" controls preload="none" poster="media/posters/02-consultora-3-armacoes.jpg" src="media/videos/02-consultora-3-armacoes.mp4" aria-label="Vídeo: consultora apresentando três armações"></video>
+        <div class="vcorpo"><h3>Três armações, uma consultora</h3><p>A escolha começa provando.</p></div>
+      </article>
+      <article class="vcard">
+        <video class="video-som" controls preload="none" poster="media/posters/04-bandeja-translucidas.jpg" src="media/videos/04-bandeja-translucidas.mp4" aria-label="Vídeo: bandeja de armações translúcidas"></video>
+        <div class="vcorpo"><h3>Translúcidas na bandeja</h3><p>Leveza que combina com tudo.</p></div>
+      </article>
+      <article class="vcard">
+        <video class="video-som" controls preload="none" poster="media/posters/06-tour-vilas-do-atlantico.jpg" src="media/videos/06-tour-vilas-do-atlantico.mp4" aria-label="Vídeo: tour pela loja de Vilas do Atlântico"></video>
+        <div class="vcorpo"><h3>Tour por Vilas do Atlântico</h3><p>Nossa loja em Lauro de Freitas, por dentro.</p></div>
+      </article>
+      <article class="vcard">
+        <video class="video-som" controls preload="none" poster="media/posters/09-sublime-bandeja-rosa.jpg" src="media/videos/09-sublime-bandeja-rosa.mp4" aria-label="Vídeo: armações Sublime na bandeja rosa"></video>
+        <div class="vcorpo"><h3>Sublime na bandeja rosa</h3><p>A linha do preço fixo, de perto.</p></div>
+      </article>
+      <article class="vcard">
+        <video class="video-som" controls preload="none" poster="media/posters/10-institucional-otica-diferente.jpg" src="media/videos/10-institucional-otica-diferente.mp4" aria-label="Vídeo institucional da Óticas Passaredo"></video>
+        <div class="vcorpo"><h3>Uma ótica diferente</h3><p>Beleza e identidade nos mínimos detalhes.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVIÇOS ================= -->
+<section id="servicos" style="padding-top:24px">
+  <div class="wrap">
+    <div class="revela">
+      <span class="eyebrow">Serviços</span>
+      <h2>Do seu jeito, onde você estiver</h2>
+    </div>
+    <div class="abas" role="tablist" aria-label="Serviços da Passaredo">
+      <button class="aba" role="tab" id="aba-casa" aria-controls="painel-casa" aria-selected="true" data-painel="painel-casa">Passa in Casa</button>
+      <button class="aba" role="tab" id="aba-lu" aria-controls="painel-lu" aria-selected="false" data-painel="painel-lu">Image Glasses By Lu</button>
+      <button class="aba" role="tab" id="aba-movel" aria-controls="painel-movel" aria-selected="false" data-painel="painel-movel">PassaMóvel</button>
+      <button class="aba" role="tab" id="aba-money" aria-controls="painel-money" aria-selected="false" data-painel="painel-money">PassaMoney</button>
+      <button class="aba" role="tab" id="aba-hora" aria-controls="painel-hora" aria-selected="false" data-painel="painel-hora">Hora marcada</button>
+    </div>
+
+    <div class="bandeja painel-servico ativo" role="tabpanel" id="painel-casa" aria-labelledby="aba-casa">
+      <span class="coracao" aria-hidden="true">♥</span>
+      <h3>Passa in Casa</h3>
+      <blockquote>“Receba a mágia da Passaredo no conforto do seu Lar! São até 100 opções de óculos para você escolher.”</blockquote>
+      <p>Nossa consultora vai até a sua casa ou escritório com uma malinha de cerca de 100 modelos, para você provar com calma, no seu espelho. A taxa de agendamento é de <strong>R$ 50 — integralmente devolvida</strong> quando você fecha a compra.</p>
+      <a class="btn btn-bordo" href="https://instagram.com/passaredo_" target="_blank" rel="noopener">Agendar pelo direct</a>
+    </div>
+
+    <div class="bandeja painel-servico" role="tabpanel" id="painel-lu" aria-labelledby="aba-lu" hidden>
+      <span class="coracao" aria-hidden="true">♥</span>
+      <h3>Image Glasses By Lu</h3>
+      <blockquote>“Aqui te orientamos tecnicamente na sua escolha e também através da sua intenção de imagem.”</blockquote>
+      <p>Consultoria de visagismo com <strong>Luciana Cardoso</strong>, co-criadora da Passaredo: a armação certa para o seu rosto, o seu estilo e a imagem que você quer passar.</p>
+    </div>
+
+    <div class="bandeja painel-servico" role="tabpanel" id="painel-movel" aria-labelledby="aba-movel" hidden>
+      <span class="coracao" aria-hidden="true">♥</span>
+      <h3>PassaMóvel</h3>
+      <p style="margin-top:12px">Nossa Doblô customizada é a Passaredo sobre rodas: a loja que chega até você.</p>
+    </div>
+
+    <div class="bandeja painel-servico" role="tabpanel" id="painel-money" aria-labelledby="aba-money" hidden>
+      <span class="coracao" aria-hidden="true">♥</span>
+      <p class="destaque-num">R$ 1 = 1 PassaMoney</p>
+      <p style="margin-top:12px">No nosso programa de fidelidade, cada real em compras vira um PassaMoney para você aproveitar nas próximas visitas.</p>
+    </div>
+
+    <div class="bandeja painel-servico" role="tabpanel" id="painel-hora" aria-labelledby="aba-hora" hidden>
+      <span class="coracao" aria-hidden="true">♥</span>
+      <h3>Atendimento com hora marcada</h3>
+      <p style="margin-top:12px">Reserve o seu horário e seja atendida com calma, com a loja dedicada a você. Nossa equipe também auxilia com o exame de vista.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= LOJAS ================= -->
+<section class="lojas" id="lojas">
+  <div class="wrap">
+    <div class="revela">
+      <span class="eyebrow">Lojas</span>
+      <h2>Procure a Passaredo mais perto de você</h2>
+    </div>
+    <div class="loja-btns" role="tablist" aria-label="Escolher loja">
+      <button class="aba" role="tab" id="aba-pituba" aria-controls="painel-pituba" aria-selected="true" data-painel="painel-pituba">Pituba · Essência</button>
+      <button class="aba" role="tab" id="aba-iguatemi" aria-controls="painel-iguatemi" aria-selected="false" data-painel="painel-iguatemi">Iguatemi</button>
+      <button class="aba" role="tab" id="aba-vilas" aria-controls="painel-vilas" aria-selected="false" data-painel="painel-vilas">Lauro · Vilas</button>
+    </div>
+
+    <div class="bandeja painel-loja ativo" role="tabpanel" id="painel-pituba" aria-labelledby="aba-pituba">
+      <span class="coracao" aria-hidden="true">♥</span>
+      <div class="loja-grid">
+        <div>
+          <h3>Pituba · Essência</h3>
+          <address>Ed. Pituba Privillege — Av. Octávio Mangabeira, 1945<br>Pituba, Salvador/BA</address>
+          <p class="linha-info"><strong>Horário</strong> Segunda a sábado, 9h–19h</p>
+          <p class="linha-info"><strong>Telefone</strong> (71) 99300-0188</p>
+          <div class="loja-acoes">
+            <a class="btn btn-bordo" href="tel:+5571993000188">Ligar para a loja</a>
+            <a class="btn btn-contorno" href="https://www.google.com/maps/search/?api=1&query=%C3%93ticas+Passaredo+Ess%C3%AAncia+Av.+Oct%C3%A1vio+Mangabeira+1945+Salvador" target="_blank" rel="noopener">Traçar rota</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bandeja painel-loja" role="tabpanel" id="painel-iguatemi" aria-labelledby="aba-iguatemi" hidden>
+      <span class="coracao" aria-hidden="true">♥</span>
+      <div class="loja-grid">
+        <div>
+          <h3>Iguatemi</h3>
+          <p class="nota-google">★ 4,6 no Google · 73 avaliações</p>
+          <address>Centro Empresarial Iguatemi, Bloco B, sala 528<br>Av. Tancredo Neves, Caminho das Árvores, Salvador/BA</address>
+          <p class="linha-info"><strong>Horário</strong> Segunda a sábado, 9h–18h</p>
+          <p class="linha-info"><strong>Telefone</strong> (71) 99300-0188</p>
+          <div class="loja-acoes">
+            <a class="btn btn-bordo" href="tel:+5571993000188">Ligar para a loja</a>
+            <a class="btn btn-contorno" href="https://www.google.com/maps/search/?api=1&query=%C3%93ticas+Passaredo+Centro+Empresarial+Iguatemi+Bloco+B+Salvador" target="_blank" rel="noopener">Traçar rota</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bandeja painel-loja" role="tabpanel" id="painel-vilas" aria-labelledby="aba-vilas" hidden>
+      <span class="coracao" aria-hidden="true">♥</span>
+      <div class="loja-grid">
+        <div>
+          <h3>Lauro de Freitas · Vilas</h3>
+          <address>Shopping Villaverde Street Mall<br>Vilas do Atlântico, Lauro de Freitas/BA</address>
+          <p class="linha-info"><strong>Horário</strong> Segunda a sábado, 9h–18h</p>
+          <p class="linha-info"><strong>Telefone</strong> (71) 99300-0188</p>
+          <div class="loja-acoes">
+            <a class="btn btn-bordo" href="tel:+5571993000188">Ligar para a loja</a>
+            <a class="btn btn-contorno" href="https://www.google.com/maps/search/?api=1&query=%C3%93ticas+Passaredo+Shopping+Villaverde+Vilas+do+Atl%C3%A2ntico+Lauro+de+Freitas" target="_blank" rel="noopener">Traçar rota</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= RODAPÉ ================= -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <img class="logo-rodape" src="media/marca/logo-passaredo.png" alt="Óticas Passaredo">
+      <nav aria-label="Mapa do site">
+        <a href="#novembro-off">Novembro OFF</a>
+        <a href="#colecoes">Coleções</a>
+        <a href="#essencia">A Loja</a>
+        <a href="#videos">Vídeos</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#lojas">Lojas</a>
+      </nav>
+      <div>
+        <p style="margin-bottom:8px">Acompanhe a gente:</p>
+        <a class="ig" href="https://instagram.com/passaredo_" target="_blank" rel="noopener">@passaredo_</a>
+      </div>
+    </div>
+    <div class="footer-fim">
+      <span>Óticas Passaredo — Salvador e Lauro de Freitas, Bahia</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= LIGHTBOX ================= -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <figure>
+    <img id="lbImg" alt="">
+    <figcaption id="lbLegenda"></figcaption>
+  </figure>
+  <button class="lb-btn lb-fechar" id="lbFechar" aria-label="Fechar">✕</button>
+  <button class="lb-btn lb-ant" id="lbAnt" aria-label="Foto anterior">‹</button>
+  <button class="lb-btn lb-prox" id="lbProx" aria-label="Próxima foto">›</button>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var reduzMovimento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* ---------- intro (criada via JS: sem JS, sem intro) ---------- */
+  if(!reduzMovimento){
+    var intro = document.createElement("div");
+    intro.id = "intro";
+    intro.setAttribute("role","dialog");
+    intro.setAttribute("aria-label","Óticas Passaredo");
+    intro.innerHTML = '<img src="media/marca/logo-passaredo.png" alt="Óticas Passaredo"><button type="button">Pular</button>';
+    document.body.appendChild(intro);
+    document.body.style.overflow = "hidden";
+    var introFechada = false;
+    function fecharIntro(){
+      if(introFechada) return;
+      introFechada = true;
+      intro.classList.add("saindo");
+      document.body.style.overflow = "";
+      setTimeout(function(){ intro.remove(); }, 500);
+    }
+    intro.addEventListener("click", fecharIntro);
+    setTimeout(fecharIntro, 1600);
+  }
+
+  /* ---------- header ---------- */
+  var header = document.querySelector("header");
+  window.addEventListener("scroll", function(){
+    header.classList.toggle("sombra", window.scrollY > 8);
+  }, {passive:true});
+
+  var menuBtn = document.getElementById("menuBtn");
+  var menu = document.getElementById("menu");
+  menuBtn.addEventListener("click", function(){
+    var aberto = menu.classList.toggle("aberto");
+    menuBtn.setAttribute("aria-expanded", aberto ? "true" : "false");
+    menuBtn.setAttribute("aria-label", aberto ? "Fechar menu" : "Abrir menu");
+  });
+  menu.addEventListener("click", function(e){
+    if(e.target.tagName === "A"){
+      menu.classList.remove("aberto");
+      menuBtn.setAttribute("aria-expanded","false");
+    }
+  });
+
+  /* ---------- revelação suave ---------- */
+  var revelaEls = document.querySelectorAll(".revela");
+  if("IntersectionObserver" in window && !reduzMovimento){
+    var ioRevela = new IntersectionObserver(function(entradas){
+      entradas.forEach(function(en){
+        if(en.isIntersecting){
+          en.target.classList.add("visivel");
+          ioRevela.unobserve(en.target);
+        }
+      });
+    }, {threshold:.12});
+    revelaEls.forEach(function(el){ ioRevela.observe(el); });
+  } else {
+    revelaEls.forEach(function(el){ el.classList.add("visivel"); });
+  }
+
+  /* ---------- filtros das coleções ---------- */
+  var filtros = document.querySelectorAll(".filtro");
+  var cards = document.querySelectorAll(".card");
+  filtros.forEach(function(btn){
+    btn.addEventListener("click", function(){
+      filtros.forEach(function(b){ b.setAttribute("aria-pressed","false"); });
+      btn.setAttribute("aria-pressed","true");
+      var f = btn.getAttribute("data-filtro");
+      cards.forEach(function(card){
+        var mostra = (f === "todas" || card.getAttribute("data-cat") === f);
+        card.hidden = !mostra;
+      });
+    });
+  });
+
+  /* ---------- simulador Novembro OFF ---------- */
+  var condicoes = {
+    sublime: { off:"R$ 123", nota:"Armação da Linha Sublime no óculos completo." },
+    solares: { off:"R$ 123", nota:"Solares no óculos completo." },
+    clipon:  { off:"R$ 209,93", nota:"30% OFF nas demais linhas, no óculos completo." }
+  };
+  var simLinha = document.getElementById("simLinha");
+  var simCompleto = document.getElementById("simCompleto");
+  var simValor = document.getElementById("simValor");
+  var simNota = document.getElementById("simNota");
+  var simRotulo = document.querySelector(".sim-resultado .rotulo");
+  function atualizarSim(){
+    var c = condicoes[simLinha.value];
+    if(simCompleto.checked){
+      simRotulo.textContent = "No Novembro OFF";
+      simValor.textContent = c.off;
+      simNota.textContent = c.nota;
+    } else {
+      simRotulo.textContent = "Condição do mês";
+      simValor.textContent = "—";
+      simNota.textContent = "A condição do Novembro OFF vale na compra do óculos completo.";
+    }
+  }
+  simLinha.addEventListener("change", atualizarSim);
+  simCompleto.addEventListener("change", atualizarSim);
+  atualizarSim();
+
+  /* ---------- abas (serviços e lojas) ---------- */
+  document.querySelectorAll('[role="tablist"]').forEach(function(lista){
+    var abas = lista.querySelectorAll('[role="tab"]');
+    abas.forEach(function(aba){
+      aba.addEventListener("click", function(){
+        abas.forEach(function(a){
+          a.setAttribute("aria-selected","false");
+          var p = document.getElementById(a.getAttribute("data-painel"));
+          p.classList.remove("ativo");
+          p.hidden = true;
+        });
+        aba.setAttribute("aria-selected","true");
+        var painel = document.getElementById(aba.getAttribute("data-painel"));
+        painel.classList.add("ativo");
+        painel.hidden = false;
+      });
+    });
+  });
+
+  /* ---------- lightbox ---------- */
+  var botoesLb = Array.prototype.slice.call(document.querySelectorAll("[data-lightbox]"));
+  var lb = document.getElementById("lightbox");
+  var lbImg = document.getElementById("lbImg");
+  var lbLegenda = document.getElementById("lbLegenda");
+  var lbAtual = 0, ultimoFoco = null;
+  function abrirLb(i){
+    lbAtual = (i + botoesLb.length) % botoesLb.length;
+    var btn = botoesLb[lbAtual];
+    var img = btn.querySelector("img");
+    lbImg.src = btn.getAttribute("data-lightbox");
+    lbImg.alt = img ? img.alt : "";
+    lbLegenda.textContent = btn.getAttribute("data-legenda") || "";
+    if(!lb.classList.contains("aberto")){
+      ultimoFoco = document.activeElement;
+      lb.classList.add("aberto");
+      document.body.style.overflow = "hidden";
+      document.getElementById("lbFechar").focus();
+    }
+  }
+  function fecharLb(){
+    lb.classList.remove("aberto");
+    document.body.style.overflow = "";
+    if(ultimoFoco) ultimoFoco.focus();
+  }
+  botoesLb.forEach(function(btn, i){
+    btn.addEventListener("click", function(){ abrirLb(i); });
+  });
+  document.getElementById("lbFechar").addEventListener("click", fecharLb);
+  document.getElementById("lbAnt").addEventListener("click", function(){ abrirLb(lbAtual - 1); });
+  document.getElementById("lbProx").addEventListener("click", function(){ abrirLb(lbAtual + 1); });
+  lb.addEventListener("click", function(e){ if(e.target === lb) fecharLb(); });
+  document.addEventListener("keydown", function(e){
+    if(!lb.classList.contains("aberto")) return;
+    if(e.key === "Escape") fecharLb();
+    if(e.key === "ArrowLeft") abrirLb(lbAtual - 1);
+    if(e.key === "ArrowRight") abrirLb(lbAtual + 1);
+  });
+
+  /* ---------- vídeos: pausa fora da tela ---------- */
+  var heroVideo = document.getElementById("heroVideo");
+  if(heroVideo) heroVideo.muted = true;
+  if(reduzMovimento && heroVideo){
+    heroVideo.removeAttribute("autoplay");
+    heroVideo.pause();
+    heroVideo.setAttribute("controls","");
+  }
+  if("IntersectionObserver" in window){
+    var ioVideo = new IntersectionObserver(function(entradas){
+      entradas.forEach(function(en){
+        var v = en.target;
+        if(en.isIntersecting){
+          /* exceção: o fundo mudo do hero pode retomar sozinho */
+          if(v === heroVideo && !reduzMovimento) v.play().catch(function(){});
+        } else {
+          if(!v.paused) v.pause();
+        }
+      });
+    }, {threshold:.25});
+    document.querySelectorAll("video").forEach(function(v){ ioVideo.observe(v); });
+  }
+  /* um vídeo com som por vez */
+  document.querySelectorAll(".video-som").forEach(function(v){
+    v.addEventListener("play", function(){
+      document.querySelectorAll(".video-som").forEach(function(outro){
+        if(outro !== v && !outro.paused) outro.pause();
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
